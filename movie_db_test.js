@@ -10,7 +10,6 @@ const service = new MovieDBService(API_KEY);
 
 async function test() {
     try {
-        // const popularMovies = await service.getPopularMovies();
         const search = await service.searchByKeyword("Star Wars");
         console.log(search);
     } catch {

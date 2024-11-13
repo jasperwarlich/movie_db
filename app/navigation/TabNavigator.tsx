@@ -22,14 +22,27 @@ const TabNavigator = () => {
                             ? require('../assets/search.png') : require('../assets/search.png')
                     }
 
-                    // Render the image as an icon
                     return <Image source={iconSource} style={{ width: size, height: size, tintColor: color }} />;
                 },
+                tabBarStyle: {
+                    backgroundColor: '#181818',
+                    borderTopWidth: 0,
+                },
+                headerStyle: {
+                    backgroundColor: '#181818',
+                    borderBottomWidth: 1,
+                    borderBottomColor: 'grey'
+                },
+                headerTintColor: '#ffffff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize: 20,
+                },
+                headerTitleAlign: 'left',
             })}
         >
             <Tab.Screen name="Discover" component={HomeScreen} />
             <Tab.Screen name="Search" component={SearchScreen} />
-            {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
         </Tab.Navigator>
     );
 };

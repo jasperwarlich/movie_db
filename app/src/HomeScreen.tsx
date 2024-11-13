@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, ActivityIndicator, FlatList, SafeAreaView, Imag
 import { MovieDBService } from '../services/moviedb.service.ts';
 import React, { useEffect, useState } from 'react';
 import MovieCard from '../components/MovieCard.tsx';
-import TabNavigator from '../navigation/TabNavigator.tsx';
 
 export default function HomeScreen() {
     const [movies, setMovies] = useState<any[]>([]);
@@ -15,7 +14,6 @@ export default function HomeScreen() {
         const fetchMovies = async () => {
             try {
                 const movies = await service.getPopularMovies();
-                console.log(movies.results)
                 setMovies(movies.results);
             } catch (error) {
                 console.log(error)
@@ -40,22 +38,14 @@ export default function HomeScreen() {
             <View style={styles.content}>
                 <ScrollView
                     horizontal
-                    contentContainerStyle={styles.scrollContainer} // Ensures proper spacing
-                    showsHorizontalScrollIndicator={false} // Hides the scroll indicator (optional)
-                >
+                    contentContainerStyle={styles.scrollContainer}
+                    showsHorizontalScrollIndicator={false}>
                     {movies.map((movie) => (
                         <MovieCard
                             movie={movie}
                         />
                     ))}
                 </ScrollView>
-                {/* <FlatList
-          data={movies['results']}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <MovieCard movie={item} />
-          )}
-        /> */}
             </View>
         </SafeAreaView>
     );
@@ -69,16 +59,18 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#171f35',
-        paddingHorizontal: 10,
+        backgroundColor: '#181818',
     },
     scrollContainer: {
-        paddingHorizontal: 5,  // Adds some space around the scrollable content
+        paddingHorizontal: 5,
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        textAlign: 'center',
+        textAlign: 'left',
+        color: 'white',
+        marginTop: 20,
+        marginLeft: 20
     },
     content: {
         padding: 20

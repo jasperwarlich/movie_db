@@ -1,12 +1,15 @@
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, SafeAreaView, Image, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import TabNavigator from './navigation/TabNavigator.tsx';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator />
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }

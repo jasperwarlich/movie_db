@@ -17,11 +17,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
 
 const styles = StyleSheet.create({
     card: {
-        // backgroundColor: 'black',
         width: 200,
         height: 500,
         borderRadius: 10,
-        padding: 0,
         alignItems: 'center',
         justifyContent: 'flex-start',
         overflow: 'hidden',
