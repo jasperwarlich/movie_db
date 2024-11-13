@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "ESNext", // or "CommonJS"
+        "target": "ESNext", // or "ES6"
+        "moduleResolution": "node",
+        "outDir": ".movie_db/servicesdist", // Compiled JavaScript files will go here
+        "esModuleInterop": true, // Allow ES module imports
+        "sourceMap": true // Optional: For debugging
+    },
+    "include": [
+        "movie_db/services/*.ts"
+    ], // Path to TypeScript files
+    "exclude": [
+        "node_modules"
+    ]
+}
